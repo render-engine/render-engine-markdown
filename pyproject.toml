@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "markdown2",
+    "render-engine-parser",
 ]
 
 [project.optional-dependencies]

@@ -1,8 +1,7 @@
 # ruff: noqa: F821
 
 from markdown2 import markdown
-
-from ..base_parsers import BasePageParser
+from render_engine_parser import BasePageParser
 
 __all__ = ["BasePageParser"]
 
@@ -14,8 +13,9 @@ class MarkdownPageParser(BasePageParser):
     """
 
     @staticmethod
-    def parse(content: str, page: "Page") -> str:
+    def parse(content: str, extras: dict[str, any] | None = None ) -> str:
         """Parses the content with the parser"""
-        extras = getattr(page, "parser_extras", {})
-        markup = markdown(content, extras=extras.get("markdown_extras", []))
-        return markup
+        return markdown(
+            content,
+            extras=extras.get("markdown_extras", []) if extras else [],
+            )

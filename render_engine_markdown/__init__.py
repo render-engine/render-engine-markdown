@@ -13,9 +13,9 @@ class MarkdownPageParser(BasePageParser):
     """
 
     @staticmethod
-    def parse(content: str, extras: dict[str, any] | None = None ) -> str:
+    def parse(content: str, extras: dict[str, any] | None = None) -> str:
         """Parses the content with the parser"""
         return markdown(
             content,
             extras=extras.get("markdown_extras", []) if extras else [],
-            )
+        )

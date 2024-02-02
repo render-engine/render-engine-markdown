@@ -14,14 +14,18 @@ These are the options that can be pulled from the page:
 | --- | --- |
 | `markdown_extras` | A list of extensions to use. See [python-markdown2](https://pypi.org/project/markdown2/) for a list of extensions. |
 
-## Content Path Type
+## Quickstart
 
-Provide a suggestion for the type of content that your parser expects.
+import the MarkdownPageParser
 
-\<CONTENTPARSER> expects a `path|url` in the content_path field of the Page object.
+Render Engine includes the parser in `render_engine.parsers.markdown`
+Alternatively, you can import directly from this path
 
-```python
-class MyPage(Page):
-    content_path = "~/.my_page.md"
-    # or content_path = "https://example.com/my_page.md"
+```py
+from render_engine.parsers.markdown import MarkdownPageParser
+# of from render_engine_markdown import MarkdownPageParser
+
+class MyMarkdownPage(Page):
+    Parser = MarkdownPageParser
+    content_path = "path_to_your_markdown_file.md"
 ```

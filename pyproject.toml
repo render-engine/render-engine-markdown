@@ -9,7 +9,7 @@ description = "Markdown Parser for Render Engine"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "markdown2<2.5.5",
+    "markdown2==2.5.4",
     "render-engine-parser",
 ]
 
